@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import Span from './Span';
 
 export default function Calculator() {
   return (
@@ -6,7 +6,7 @@ export default function Calculator() {
       <Span text="0" color="display" />
       <Span text="AC" color="white" />
       <Span text="+/-" color="white" />
-      <Span text="%-" color="white" />
+      <Span text="%" color="white" />
       <Span text="÷" color="yellow" />
       <Span text="7" color="white" />
       <Span text="8" color="white" />
@@ -26,14 +26,3 @@ export default function Calculator() {
     </div>
   );
 }
-
-function Span({ text, color }) {
-  return (
-    <span className={color}>{text}</span>
-  );
-}
-
-Span.propTypes = {
-  text: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-};
