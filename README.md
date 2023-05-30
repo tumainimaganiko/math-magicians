@@ -135,7 +135,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Key Features <a name="key-features"></a>
 
 
-- COMING SOON
+- Users can make simple calculations.
+- Users can read a random math-related quote.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,8 +186,7 @@ npm start
 
 ### Run tests
 
-Coming soon
-
+- run npm test command
 ### Deployment
 
 Coming soon
