@@ -1,4 +1,5 @@
 import Span from './Span';
+import calculate from '../logic/calculate';
 
 export default function Calculator() {
   return (
