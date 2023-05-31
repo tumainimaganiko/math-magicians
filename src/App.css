@@ -9,8 +9,9 @@
   margin: 40px auto;
 }
 
-.container span {
+.container button {
   padding: 8px 1px;
+  border: none;
 }
 
 .zero {
