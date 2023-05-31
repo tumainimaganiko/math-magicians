@@ -4,8 +4,8 @@ import calculate from '../logic/calculate';
 export default function Span({
   text, color, obj, setObj,
 }) {
-  function handleClick(buttonName) {
-    setObj(calculate(obj, buttonName));
+  function handleClick(valueBtn) {
+    setObj(calculate(obj, valueBtn));
   }
   return (
     <button onClick={() => handleClick(text)} type="button" className={color}>
