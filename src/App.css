@@ -32,3 +32,8 @@
 .yellow {
   background-color: #f4913e;
 }
+
+.quote {
+  padding: 10px;
+  text-align: center;
+}
