@@ -1,9 +1,7 @@
-import PropTypes from 'prop-types';
-import calculate from '../logic/calculate';
+import PropTypes from "prop-types";
+import calculate from "../logic/calculate";
 
-export default function Span({
-  text, color, obj, setObj,
-}) {
+export default function Span({ text, color, obj, setObj }) {
   function handleClick(valueBtn) {
     setObj(calculate(obj, valueBtn));
   }
