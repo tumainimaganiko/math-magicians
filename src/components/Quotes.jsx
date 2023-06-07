@@ -39,13 +39,22 @@ export default function Quotes() {
     };
   }, [setIsLoading, setErr]);
 
-  return (
-    <div className="quote">
-      {isLoading ? 'Please Wait we are fetching Quotes' : ''}
+  const wrapper = {
+    display: 'flex',
+    'justify-content': 'center',
+    'align-items': 'center',
+    padding: '200px 30px',
+  };
 
-      {!err
-        ? `${quotes[0].quote}  ${quotes[0].author}`
-        : 'There is any error in fetching Data'}
+  return (
+    <div className="wrapper" style={wrapper}>
+      <div className="quote">
+        {isLoading ? 'Please Wait we are fetching Quotes' : ''}
+
+        {!err
+          ? `${quotes[0].quote}  ${quotes[0].author}`
+          : 'There is any error in fetching Data'}
+      </div>
     </div>
   );
 }

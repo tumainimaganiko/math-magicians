@@ -36,6 +36,7 @@
 .quote {
   padding: 10px;
   text-align: center;
+  font-weight: 900;
 }
 
 .navbar {
@@ -52,4 +53,17 @@
 
 .navbar ul li {
   padding: 10px;
+}
+
+.navbar a:active {
+  color: blue;
+}
+
+.navbar a:hover {
+  color: red;
+}
+
+.navbar li:nth-child(2) {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
