@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function Quotes() {
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState(false);
   const [quotes, setQuotes] = useState([
     {
-      quote: "",
-      author: "",
-      category: "",
+      quote: '',
+      author: '',
+      category: '',
     },
   ]);
 
@@ -16,11 +16,11 @@ export default function Quotes() {
     const fetchQuotes = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("https://api.api-ninjas.com/v1/quotes", {
-          method: "GET",
+        const response = await fetch('https://api.api-ninjas.com/v1/quotes', {
+          method: 'GET',
           headers: {
-            "Content-Type": "application/json",
-            "X-API-Key": "T4e57bd+nZWxSEgR4/XZNg==BOSUQttNXAPifpcW",
+            'Content-Type': 'application/json',
+            'X-API-Key': 'T4e57bd+nZWxSEgR4/XZNg==BOSUQttNXAPifpcW',
           },
         });
         const result = await response.json();
@@ -41,11 +41,11 @@ export default function Quotes() {
 
   return (
     <div className="quote">
-      {isLoading ? "Please Wait we are fetching Quotes" : ""}
+      {isLoading ? 'Please Wait we are fetching Quotes' : ''}
 
       {!err
         ? `${quotes[0].quote}  ${quotes[0].author}`
-        : "There is any error in fetching Data"}
+        : 'There is any error in fetching Data'}
     </div>
   );
 }
