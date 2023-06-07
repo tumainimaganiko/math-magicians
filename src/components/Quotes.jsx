@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 export default function Quotes() {
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState(false);
-  const [quotes, setQuotes] = useState([{
-    quote: '',
-    author: '',
-    category: '',
-  }]);
+  const [quotes, setQuotes] = useState([
+    {
+      quote: '',
+      author: '',
+      category: '',
+    },
+  ]);
 
   useEffect(() => {
     let ready = true;
@@ -37,12 +39,22 @@ export default function Quotes() {
     };
   }, [setIsLoading, setErr]);
 
+  const wrapper = {
+    display: 'flex',
+    'justify-content': 'center',
+    'align-items': 'center',
+    padding: '200px 30px',
+  };
+
   return (
-    <div className="quote">
-      {isLoading ? 'Please Wait we are fetching Quotes' : ''}
+    <div className="wrapper" style={wrapper}>
+      <div className="quote">
+        {isLoading ? 'Please Wait we are fetching Quotes' : ''}
 
-      { !err ? (`${quotes[0].quote}  ${quotes[0].author}`) : 'There is any error in fetching Data' }
-
+        {!err
+          ? `${quotes[0].quote}  ${quotes[0].author}`
+          : 'There is any error in fetching Data'}
+      </div>
     </div>
   );
 }
