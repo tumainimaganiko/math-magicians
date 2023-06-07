@@ -1,6 +1,7 @@
 body {
   background-color: bisque;
 }
+
 .container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -52,7 +53,7 @@ h1 {
   font-size: 42px;
 }
 
-.navbar ul  {
+.navbar ul {
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
