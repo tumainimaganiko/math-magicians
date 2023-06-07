@@ -1,3 +1,6 @@
+body {
+  background-color: bisque;
+}
 .container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -44,6 +47,11 @@
   justify-content: space-between;
 }
 
+h1 {
+  padding: 0 20px;
+  font-size: 42px;
+}
+
 .navbar ul  {
   display: flex;
   list-style-type: none;
@@ -51,8 +59,8 @@
   margin-right: 20px;
 }
 
-.navbar ul li {
-  padding: 10px;
+.navbar a {
+  padding: 5px 10px;
 }
 
 .navbar a:active {
@@ -63,7 +71,7 @@
   color: red;
 }
 
-.navbar li:nth-child(2) {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+.navbar li:nth-child(2) a {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }

@@ -1,5 +1,7 @@
+import styles from 'styles/Home.module.css';
+
 const Home = () => (
-  <div>
+  <div className={styles.mainDiv}>
     <h2>Welcome to Our Page!</h2>
     <div>
       <p>

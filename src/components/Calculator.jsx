@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from 'styles/Calculator.module.css';
 import Span from './Span';
 
 export default function Calculator() {
@@ -8,9 +9,13 @@ export default function Calculator() {
     operation: null,
   });
 
+  const heading = {
+    padding: '20px',
+  };
+
   return (
-    <>
-      <h2>Let&apos;s do some Math</h2>
+    <div className={styles.container}>
+      <h2 style={heading}>Let&apos;s do some Math!</h2>
       <div className="container">
         <div className="display">{obj.next || obj.total || '0'}</div>
         <Span obj={obj} setObj={setObj} text="AC" color="white" />
@@ -33,6 +38,6 @@ export default function Calculator() {
         <Span obj={obj} setObj={setObj} text="." color="white" />
         <Span obj={obj} setObj={setObj} text="=" color="yellow" />
       </div>
-    </>
+    </div>
   );
 }
