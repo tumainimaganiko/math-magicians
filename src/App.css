@@ -6,7 +6,7 @@
   background-color: gray;
   width: 30%;
   text-align: center;
-  margin: 40px auto;
+  margin: 40px 20px 40px auto;
 }
 
 .container button {
@@ -36,4 +36,20 @@
 .quote {
   padding: 10px;
   text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar ul  {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.navbar ul li {
+  padding: 10px;
 }
