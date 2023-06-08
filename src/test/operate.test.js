@@ -18,4 +18,12 @@ describe('Testing Operation', () => {
     const data = operate('8', '4', '÷');
     expect(data).toBe('2');
   });
+  test('operate', () => {
+    const data = operate('3', '0', '÷');
+    expect(data).toBe("Can't divide by 0.");
+  });
+  test('operate', () => {
+    const data = operate('10', '0', '%');
+    expect(data).toBe("Can't find modulo as can't divide by 0.");
+  });
 });
