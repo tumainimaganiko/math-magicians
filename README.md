@@ -106,7 +106,9 @@ Open [http://localhost:3000](http://localhost:8080) to view it in your browser.
 
 ### Run tests
 
-Coming soon
+```
+  npm run test
+```
 
 
 ## Deployment <a name="Deployment"></a>
@@ -131,6 +133,13 @@ Coming Soon
 - GitHub: [@githubhandle](https://github.com/tumainimaganiko)
 - Twitter: [@twitterhandle](https://twitter.com/Chief2maini)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tumaini-maganiko-991b30262/)
+
+
+👤 Otmane Echchafyky
+
+- GitHub: [@githubhandle](https://github.com/otmaneechchafyky)
+- Twitter: [@twitterhandle](https://twitter.com/EchchafykyO)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/otmane-echchafyky-125801248/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
