@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render quotes 1`] = `
+<div
+  className="wrapper"
+  style={
+    Object {
+      "align-items": "center",
+      "display": "flex",
+      "justify-content": "center",
+      "padding": "200px 30px",
+    }
+  }
+>
+  <div
+    className="quote"
+  >
+      
+  </div>
+</div>
+`;

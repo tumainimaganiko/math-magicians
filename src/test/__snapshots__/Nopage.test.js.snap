@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendere no page 1`] = `
+<div
+  style={
+    Object {
+      "font-weight": "700",
+      "text-align": "center",
+    }
+  }
+>
+  <p>
+    This page doesn't exist
+    <br />
+     
+    Please check your URL or return to Our home page
+  </p>
+</div>
+`;
