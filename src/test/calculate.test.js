@@ -1,93 +1,93 @@
-import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import calculate from "logic/calculate";
-import Span from "components/Span";
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import calculate from 'logic/calculate';
+import Span from 'components/Span';
 
-describe("test Calculating", () => {
-  test("Subtraction", () => {
+describe('test Calculating', () => {
+  test('Subtraction', () => {
     const obj = {
-      total: "20",
-      next: "2",
-      operation: "-",
+      total: '20',
+      next: '2',
+      operation: '-',
     };
     render(<Span obj={obj} setObj={() => obj} text="=" color="white" />);
-    const equal = calculate(obj, "=");
-    const button = screen.getByRole("button");
+    const equal = calculate(obj, '=');
+    const button = screen.getByRole('button');
     fireEvent.click(button);
-    expect(equal.total).toBe("18");
+    expect(equal.total).toBe('18');
   });
 
-  test("Addition", () => {
+  test('Addition', () => {
     const obj = {
-      total: "2",
-      next: "2",
-      operation: "+",
+      total: '2',
+      next: '2',
+      operation: '+',
     };
     render(<Span obj={obj} setObj={() => obj} text="=" color="white" />);
-    const equal = calculate(obj, "=");
-    const button = screen.getByRole("button");
+    const equal = calculate(obj, '=');
+    const button = screen.getByRole('button');
     fireEvent.click(button);
-    expect(equal.total).toBe("4");
+    expect(equal.total).toBe('4');
   });
-  test("Multiplication", () => {
+  test('Multiplication', () => {
     const obj = {
-      total: "2",
-      next: "4",
-      operation: "x",
+      total: '2',
+      next: '4',
+      operation: 'x',
     };
     render(<Span obj={obj} setObj={() => obj} text="=" color="white" />);
-    const equal = calculate(obj, "=");
-    const button = screen.getByRole("button");
+    const equal = calculate(obj, '=');
+    const button = screen.getByRole('button');
     fireEvent.click(button);
-    expect(equal.total).toBe("8");
-  });
-
-  test("Division", () => {
-    const obj = {
-      total: "20",
-      next: "4",
-      operation: "÷",
-    };
-    render(<Span obj={obj} setObj={() => obj} text="=" color="white" />);
-    const equal = calculate(obj, "=");
-    const button = screen.getByRole("button");
-    fireEvent.click(button);
-    expect(equal.total).toBe("5");
+    expect(equal.total).toBe('8');
   });
 
-  test("All clear with AC button", () => {
+  test('Division', () => {
     const obj = {
-      total: "2",
-      next: "2",
-      operation: "+",
+      total: '20',
+      next: '4',
+      operation: '÷',
+    };
+    render(<Span obj={obj} setObj={() => obj} text="=" color="white" />);
+    const equal = calculate(obj, '=');
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+    expect(equal.total).toBe('5');
+  });
+
+  test('All clear with AC button', () => {
+    const obj = {
+      total: '2',
+      next: '2',
+      operation: '+',
     };
     render(<Span obj={obj} setObj={() => obj} text="AC" color="white" />);
-    const equal = calculate(obj, "AC");
-    const button = screen.getByRole("button");
+    const equal = calculate(obj, 'AC');
+    const button = screen.getByRole('button');
     fireEvent.click(button);
     expect(equal.total).toBeNull();
   });
 });
 
-describe("When there is operation, update next", () => {
-  test("updates next when there is an operation", () => {
+describe('When there is operation, update next', () => {
+  test('updates next when there is an operation', () => {
     // Input
     const obj = {
-      total: "10",
-      next: "9",
-      operation: "+",
+      total: '10',
+      next: '9',
+      operation: '+',
     };
 
-    const buttonName = "2";
+    const buttonName = '2';
     render(<Span obj={obj} setObj={() => obj} text="2" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
-      total: "10",
-      next: "92",
-      operation: "+",
+      total: '10',
+      next: '92',
+      operation: '+',
     };
 
     const result = calculate(obj, buttonName);
@@ -96,24 +96,24 @@ describe("When there is operation, update next", () => {
     expect(result).toEqual(output);
   });
 
-  test("updates next with buttonName when next is null", () => {
+  test('updates next with buttonName when next is null', () => {
     // Input
     const obj = {
-      total: "5",
+      total: '5',
       next: null,
-      operation: "%",
+      operation: '%',
     };
 
-    const buttonName = "9";
+    const buttonName = '9';
     render(<Span obj={obj} setObj={() => obj} text="9" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
-      total: "5",
-      next: "9",
-      operation: "%",
+      total: '5',
+      next: '9',
+      operation: '%',
     };
 
     const result = calculate(obj, buttonName);
@@ -123,24 +123,24 @@ describe("When there is operation, update next", () => {
   });
 });
 
-describe("When no operation", () => {
-  test("updates next and clears total when there is no operation and next is not null", () => {
+describe('When no operation', () => {
+  test('updates next and clears total when there is no operation and next is not null', () => {
     // Input
     const obj = {
-      total: "5",
-      next: "7",
+      total: '5',
+      next: '7',
       operation: null,
     };
 
-    const buttonName = "2";
+    const buttonName = '2';
     render(<Span obj={obj} setObj={() => obj} text="2" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       total: null,
-      next: "72",
+      next: '72',
     };
 
     const result = calculate(obj, buttonName);
@@ -149,23 +149,23 @@ describe("When no operation", () => {
     expect(result).toEqual(output);
   });
 
-  test("updates next and clears total when there is no operation and next is null", () => {
+  test('updates next and clears total when there is no operation and next is null', () => {
     // Input
     const obj = {
-      total: "5",
+      total: '5',
       next: null,
       operation: null,
     };
 
-    const buttonName = "2";
+    const buttonName = '2';
     render(<Span obj={obj} setObj={() => obj} text="2" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       total: null,
-      next: "2",
+      next: '2',
     };
 
     const result = calculate(obj, buttonName);
@@ -175,24 +175,24 @@ describe("When no operation", () => {
   });
 });
 
-describe("When user press .", () => {
-  test("If there is next with .", () => {
+describe('When user press .', () => {
+  test('If there is next with .', () => {
     // Input
     const obj = {
       total: null,
-      next: "4.",
+      next: '4.',
       operation: null,
     };
 
-    const buttonName = ".";
+    const buttonName = '.';
     render(<Span obj={obj} setObj={() => obj} text="." color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      next: "4.",
+      next: '4.',
     };
 
     const result = calculate(obj, buttonName);
@@ -201,23 +201,23 @@ describe("When user press .", () => {
     expect(result).toEqual(output);
   });
 
-  test("If there is next without .", () => {
+  test('If there is next without .', () => {
     // Input
     const obj = {
       total: null,
-      next: "3",
+      next: '3',
       operation: null,
     };
 
-    const buttonName = ".";
+    const buttonName = '.';
     render(<Span obj={obj} setObj={() => obj} text="." color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      next: "3.",
+      next: '3.',
     };
 
     const result = calculate(obj, buttonName);
@@ -226,40 +226,40 @@ describe("When user press .", () => {
     expect(result).toEqual(output);
   });
 
-  test("If there is operation", () => {
+  test('If there is operation', () => {
     // input
     const obj = {
-      total: "5",
+      total: '5',
       next: null,
-      operation: "+",
+      operation: '+',
     };
 
-    const buttonName = ".";
+    const buttonName = '.';
     render(<Span obj={obj} setObj={() => obj} text="." color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      next: "0.",
+      next: '0.',
     };
 
     const result = calculate(obj, buttonName);
     expect(result).toEqual(output);
   });
 
-  test("If there is total", () => {
+  test('If there is total', () => {
     // Input
     const obj = {
-      total: "7.",
+      total: '7.',
       next: null,
       operation: null,
     };
 
-    const buttonName = ".";
+    const buttonName = '.';
     render(<Span obj={obj} setObj={() => obj} text="." color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
@@ -270,30 +270,30 @@ describe("When user press .", () => {
     expect(result).toEqual(output);
   });
 
-  test("If there is total", () => {
+  test('If there is total', () => {
     // Input
     const obj = {
-      total: "7",
+      total: '7',
       next: null,
       operation: null,
     };
 
-    const buttonName = ".";
+    const buttonName = '.';
     render(<Span obj={obj} setObj={() => obj} text="." color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      next: "7.",
+      next: '7.',
     };
 
     const result = calculate(obj, buttonName);
     // Testing if the actual result matches the expected object
     expect(result).toEqual(output);
   });
-  test("If there is .", () => {
+  test('If there is .', () => {
     // Input
     const obj = {
       total: null,
@@ -301,15 +301,15 @@ describe("When user press .", () => {
       operation: null,
     };
 
-    const buttonName = ".";
+    const buttonName = '.';
     render(<Span obj={obj} setObj={() => obj} text="." color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      next: "0.",
+      next: '0.',
     };
 
     const result = calculate(obj, buttonName);
@@ -318,47 +318,47 @@ describe("When user press .", () => {
   });
 });
 
-describe("If user press +/-", () => {
-  test("If there is next", () => {
+describe('If user press +/-', () => {
+  test('If there is next', () => {
     // Input
     const obj = {
       total: null,
-      next: "7",
+      next: '7',
       operation: null,
     };
 
-    const buttonName = "+/-";
+    const buttonName = '+/-';
     render(<Span obj={obj} setObj={() => obj} text="+/-" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      next: "-7",
+      next: '-7',
     };
 
     const result = calculate(obj, buttonName);
     // Testing if the actual result matches the expected object
     expect(result).toEqual(output);
   });
-  test("If there is total", () => {
+  test('If there is total', () => {
     // Input
     const obj = {
-      total: "9",
+      total: '9',
       next: null,
       operation: null,
     };
 
-    const buttonName = "+/-";
+    const buttonName = '+/-';
     render(<Span obj={obj} setObj={() => obj} text="+/-" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      total: "-9",
+      total: '-9',
     };
 
     const result = calculate(obj, buttonName);
@@ -374,9 +374,9 @@ describe("If user press +/-", () => {
       operation: null,
     };
 
-    const buttonName = "+/-";
+    const buttonName = '+/-';
     render(<Span obj={obj} setObj={() => obj} text="+/-" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
@@ -388,24 +388,24 @@ describe("If user press +/-", () => {
   });
 });
 
-describe("User pressed an operation after pressing the = sign", () => {
-  test("Testing", () => {
+describe('User pressed an operation after pressing the = sign', () => {
+  test('Testing', () => {
     // Input
     const obj = {
-      total: "9",
+      total: '9',
       next: null,
       operation: null,
     };
 
-    const buttonName = "-";
+    const buttonName = '-';
     render(<Span obj={obj} setObj={() => obj} text="-" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      operation: "-",
+      operation: '-',
     };
 
     const result = calculate(obj, buttonName);
@@ -415,24 +415,24 @@ describe("User pressed an operation after pressing the = sign", () => {
   });
 });
 
-describe("User pressed an operation button and there is an existing operation", () => {
-  test("If there is total but next is null", () => {
+describe('User pressed an operation button and there is an existing operation', () => {
+  test('If there is total but next is null', () => {
     // Input
     const obj = {
-      total: "8",
+      total: '8',
       next: null,
-      operation: "-",
+      operation: '-',
     };
 
-    const buttonName = "+";
+    const buttonName = '+';
     render(<Span obj={obj} setObj={() => obj} text="+" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       ...obj,
-      operation: "+",
+      operation: '+',
     };
 
     const result = calculate(obj, buttonName);
@@ -440,47 +440,47 @@ describe("User pressed an operation button and there is an existing operation", 
     expect(result).toEqual(output);
   });
 
-  test("If there is no total", () => {
+  test('If there is no total', () => {
     // Input
     const obj = {
       total: null,
       next: null,
-      operation: "-",
+      operation: '-',
     };
 
-    const buttonName = "+";
+    const buttonName = '+';
     render(<Span obj={obj} setObj={() => obj} text="+" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
       total: 0,
-      operation: "+",
+      operation: '+',
     };
 
     const result = calculate(obj, buttonName);
     // Testing if the actual result matches the expected object
     expect(result).toEqual(output);
   });
-  test("Otherwise it should return", () => {
+  test('Otherwise it should return', () => {
     // Input
     const obj = {
-      total: "9",
-      next: "5",
-      operation: "-",
+      total: '9',
+      next: '5',
+      operation: '-',
     };
 
-    const buttonName = "+";
+    const buttonName = '+';
     render(<Span obj={obj} setObj={() => obj} text="+" color="white" />);
-    const button = screen.getByRole("button");
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     // Output
     const output = {
-      total: "4",
+      total: '4',
       next: null,
-      operation: "+",
+      operation: '+',
     };
 
     const result = calculate(obj, buttonName);

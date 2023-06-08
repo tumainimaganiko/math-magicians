@@ -133,6 +133,13 @@ Coming Soon
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tumaini-maganiko-991b30262/)
 
 
+👤 Otmane Echchafyky
+
+- GitHub: [@githubhandle](https://github.com/otmaneechchafyky)
+- Twitter: [@twitterhandle](https://twitter.com/EchchafykyO)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/otmane-echchafyky-125801248/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
