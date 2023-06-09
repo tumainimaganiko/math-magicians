@@ -18,6 +18,7 @@
   - [🛠 Built With ](#-built-with-)
         - [Languages](#languages)
     - [Tech Stack ](#tech-stack-)
+  - [🚀 Live Demo ](#-live-demo-)
     - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -55,6 +56,14 @@
     <li><a href="/index.js">JAVASCRIPT</a></li>
   </ul>
 </details>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://mathematician-app.onrender.com/calculator)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
