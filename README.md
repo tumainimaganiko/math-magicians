@@ -61,7 +61,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://mathematician-app.onrender.com/calculator)
+- [Live Demo Link](https://mathematician-app.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

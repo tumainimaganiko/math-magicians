@@ -13,7 +13,6 @@ const Navbar = () => {
     right: '10px',
   };
   return (
-
     <>
       <nav className="navbar">
         <h1>Math Magicians</h1>
@@ -33,7 +32,6 @@ const Navbar = () => {
         .
       </footer>
     </>
-
   );
 };
 export default Navbar;
