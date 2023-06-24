@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import styles from 'styles/Calculator.module.css';
-import Span from './Span';
+import { useState } from "react";
+import styles from "styles/Calculator.module.css";
+import Span from "./Span";
 
 export default function Calculator() {
   const [obj, setObj] = useState({
@@ -10,14 +10,14 @@ export default function Calculator() {
   });
 
   const heading = {
-    padding: '20px',
+    padding: "20px",
   };
 
   return (
     <div className={styles.container}>
       <h2 style={heading}>Let&apos;s do some Math!</h2>
       <div className="container">
-        <div className="display">{obj.next || obj.total || '0'}</div>
+        <div className="display">{obj.next || obj.total || "0"}</div>
         <Span obj={obj} setObj={setObj} text="AC" color="white" />
         <Span obj={obj} setObj={setObj} text="+/-" color="white" />
         <Span obj={obj} setObj={setObj} text="%" color="white" />

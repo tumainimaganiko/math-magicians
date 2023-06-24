@@ -1,30 +1,29 @@
-import styles from 'styles/Home.module.css';
+import styles from "styles/Home.module.css";
 
 const Home = () => (
   <div className={styles.mainDiv}>
     <h2>Welcome to Our Page!</h2>
     <div>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
-        itaque aspernatur eligendi optio a veniam sapiente deserunt totam
-        assumenda aut, ab nemo suscipit ratione repudiandae doloremque
-        distinctio vitae reiciendis! Dolor sit voluptatem ullam necessitatibus
-        ducimus iure voluptates natus ad aspernatur? Quia quae voluptatibus
-        neque repellat quos magnam suscipit, corporis fugit.
+        Mathematics is the foundation of countless everyday calculations that we
+        encounter in our lives. From splitting bills at a restaurant to
+        calculating the area of a room, these mathematical operations are
+        essential in our day-to-day activities. Our Simple Mathematics
+        Application is here to make those calculations a breeze, providing you
+        with a user-friendly platform to perform a wide range of normal
+        calculations quickly and accurately.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus,
-        eligendi aperiam aspernatur, animi vero optio vitae consequuntur
-        aliquam explicabo facere quasi odio qui officiis, repellat et.
-        Eligendi nam debitis iure maiores placeat provident suscipit itaque
-        blanditiis eum! Quisquam ad praesentium tenetur, voluptatem quasi
-        aliquid recusandae aut fuga repellendus ut atque sed corrupti
-        laudantium voluptates omnis molestiae sint deleniti. Doloribus cumque
-        molestias nemo maxime sunt repellendus accusantium repudiandae omnis
-        nihil numquam fugit dolor quis praesentium quo non voluptates
-        voluptatem, vel optio! Sed perferendis libero officia, amet ut minima
-        illum, id sit voluptates quo nemo deserunt, blanditiis quidem
-        reprehenderit! Laudantium, delectus temporibus!
+        Whether you&apos;re a student, a professional, or someone who simply wants to
+        have a handy tool for everyday math, our application is designed to meet
+        your needs. With its sleek and intuitive interface, you&apos;ll find
+        performing calculations effortless and enjoyable. Say goodbye to the
+        hassle of manual calculations or digging through piles of papers—our
+        application simplifies your mathematical tasks and saves you valuable
+        time. Elevate your math experience with our Simple Mathematics
+        Application! Plus, enjoy a touch of inspiration with our built-in random
+        quotes feature, sourced from Ninjas API collection. Discover the power
+        of numbers and wisdom in one place.
       </p>
     </div>
   </div>
